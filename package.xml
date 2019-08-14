@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package>
+    <name>GlyphWebCore_NewsletterTest</name>
+    <version>1.0.0</version>
+    <stability>stable</stability>
+    <license>Open Software License (OSL)</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Send a Test Newsletter to an email to check how the customers will receive your Newsletter.</summary>
+    <description>Ever wanted to know how your Newsletter looks like before sending it to your customers? Yes, Magento provides you a preview of the Newsletter, but, sometimes, the format of the Newsletter received to an email client can be different than what you see in the Magento Newsletter preview.&#xD;
+&#xD;
+Now, you can send a copy of the Newsletter as a test to any email and check how it will look for your customers in their email.&#xD;
+&#xD;
+NOTE: In the Test Newsletter that you receive, variables will NOT be replaced with Links. For example,"{{var subscriber.getUnsubscriptionLink()}}" will not be replaced with the actual unsubscribe URL.</description>
+    <notes>Initial Release</notes>
+    <authors><author><name>Harish Kumar B P</name><user>harish_bp</user><email>harishbp@magedevelopment.com</email></author></authors>
+    <date>2013-10-25</date>
+    <time>21:18:43</time>
+    <contents><target name="magecommunity"><dir name="GlyphWebCore"><dir name="NewsletterTest"><dir name="Helper"><file name="Data.php" hash="d3a1cd9454346e9dd6e10aa136987747"/></dir><dir name="controllers"><dir name="Adminhtml"><file name="SendTestController.php" hash="a746bf58f135e852b8cb123230992688"/><file name=".DS_Store" hash="194577a7e20bdcc7afbb718f502c134c"/></dir><file name=".DS_Store" hash="ed95c546eedb16b600a0ad7b25710c34"/></dir><dir name="etc"><file name="config.xml" hash="61f78e0cf02bebdb7ada6927c121d1c6"/><file name=".DS_Store" hash="f7cad3e2cf161faad95bd5d82cf6247c"/></dir><file name=".DS_Store" hash="41775c7cba1d509412978bb5f7ad9103"/></dir></dir></target><target name="mageetc"><dir name="modules"><file name="GlyphWebCore_NewsletterTest.xml" hash="ba5b6f9a14dfeb87f8736792a27d98e8"/></dir></target><target name="magedesign"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="layout"><dir name="glyphwebcore"><file name="newslettertest.xml" hash="47de848e1847d7c3ab855bcb7cdf4088"/></dir></dir><dir name="template"><dir name="glyphwebcore"><dir name="newslettertest"><file name="sendtest.phtml" hash="e0f35af58b4754d57bbc51d6aa4be2b6"/><file name=".DS_Store" hash="194577a7e20bdcc7afbb718f502c134c"/></dir></dir></dir></dir></dir></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.2.0</min><max>5.5.0</max></php></required></dependencies>
+</package>

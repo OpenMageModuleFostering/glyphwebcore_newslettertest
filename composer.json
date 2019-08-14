@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/GlyphWebCore_NewsletterTest",
+    "type": "magento-module",
+    "license": "Open-Software-License-(OSL)",
+    "homepage": "",
+    "description": "Send a Test Newsletter to an email to check how the customers will receive your Newsletter.",
+    "authors": [
+    {
+        "name": "Harish Kumar B P",
+        "email": "harishbp@magedevelopment.com"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}
