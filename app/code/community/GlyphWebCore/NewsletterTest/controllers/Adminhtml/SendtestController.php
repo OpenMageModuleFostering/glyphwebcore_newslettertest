@@ -24,15 +24,6 @@ class GlyphWebCore_NewsletterTest_Adminhtml_SendtestController extends Mage_Admi
     public function postAction()
     {
         $post = $this->getRequest()->getPost();
-		$sql = "SELECT * FROM newsletter_queue WHERE queue_id =".$post['id'];
-		$connection = Mage::getSingleton('core/resource')->getConnection('core_read');
-				
-		foreach($connection->fetchAll($sql) as $myrow) 
-		{
- 			$sender = $myrow['newsletter_sender_email'];		
-		 	$subject = $myrow['newsletter_subject'];
- 			$message = $myrow['newsletter_text'];
-		}
         
         try 
         {
@@ -41,9 +32,40 @@ class GlyphWebCore_NewsletterTest_Adminhtml_SendtestController extends Mage_Admi
                 Mage::throwException($this->__('Invalid form data.'));
             }
             
+            $template = Mage::getModel('newsletter/template');
+            $queue = Mage::getModel('newsletter/queue');
+            $queue->load($post['id']);
+            $template->setTemplateType($queue->getNewsletterType());
+            $template->setTemplateText($queue->getNewsletterText());
+            $template->setTemplateStyles($queue->getNewsletterStyles());
+            $sender = $queue->getNewsletterSenderEmail();
+            $subject = $queue->getNewsletterSubject();
+            
+        	$storeId = (int)$this->getRequest()->getParam('store_id');
+        	if(!$storeId) 
+        	{
+            	$storeId = Mage::app()->getDefaultStoreView()->getId();
+        	}           
+            
+        	Varien_Profiler::start("newsletter_queue_proccessing");
+        	
+        	$vars = array();
+        	$vars['subscriber'] = Mage::getModel('newsletter/subscriber');
+
+        	$template->emulateDesign($storeId);
+        	$templateProcessed = $template->getProcessedTemplate($vars, true);
+        	$template->revertDesign();
+
+        	if($template->isPlain()) 
+        	{
+            	$templateProcessed = "<pre>" . htmlspecialchars($templateProcessed) . "</pre>";
+        	}
+
+        	Varien_Profiler::stop("newsletter_queue_proccessing");
+            
             $mail = new Zend_Mail();
             $mail->setFrom($sender);
-            $mail->setBodyHtml($message);
+            $mail->setBodyHtml($templateProcessed);
             $mail->addTo($post['email'], $post['name']);
             $mail->setSubject($subject);
             $mail->send();            
@@ -54,7 +76,7 @@ class GlyphWebCore_NewsletterTest_Adminhtml_SendtestController extends Mage_Admi
         catch (Exception $e) 
         {
             Mage::getSingleton('adminhtml/session')->addError($e->getMessage());
-        }      
+        }         
         
         $this->_redirect('*/*/');
     }

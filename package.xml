@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
     <name>GlyphWebCore_NewsletterTest</name>
-    <version>1.0.1</version>
+    <version>1.1.0</version>
     <stability>stable</stability>
     <license>Open Software License (OSL)</license>
     <channel>community</channel>
@@ -9,16 +9,12 @@
     <summary>Send a Test Newsletter to an email to check how the customers will receive your Newsletter.</summary>
     <description>Ever wanted to know how your Newsletter looks like before sending it to your customers? Yes, Magento provides you a preview of the Newsletter, but, sometimes, the format of the Newsletter received to an email client can be different than what you see in the Magento Newsletter preview.&#xD;
 &#xD;
-Now, you can send a copy of the Newsletter as a test to any email and check how it will look for your customers in their email.&#xD;
-&#xD;
-NOTE: In the Test Newsletter that you receive, variables will NOT be replaced with Links. For example,"{{var subscriber.getUnsubscriptionLink()}}" will not be replaced with the actual unsubscribe URL.</description>
-    <notes>1. Fixed 404 error message which occurs when "Send Test Newsletter" menu is clicked.&#xD;
-&#xD;
-2. Adding code to check if active Newsletter Queues are present.</notes>
+Now, you can send a copy of the Newsletter as a test to any email and check how it will look for your customers in their email.</description>
+    <notes>Now, Newsletter Email Variables such as 'Unsubscribe URL' are substituted with correct values in the Newsletter Test email.</notes>
     <authors><author><name>Harish Kumar B P</name><user>magedevelopment</user><email>harishbp@magedevelopment.com</email></author></authors>
-    <date>2013-11-02</date>
-    <time>11:43:58</time>
-    <contents><target name="magecommunity"><dir name="GlyphWebCore"><dir name="NewsletterTest"><dir name="Helper"><file name="Data.php" hash="6b3b2bcdeb4faf7bed8873c7ea1f0d70"/></dir><dir name="controllers"><dir name="Adminhtml"><file name="SendtestController.php" hash="d5da550813ce548664c82a32cd5ecfd5"/></dir></dir><dir name="etc"><file name="config.xml" hash="315f62c33fc62274363115668712b391"/></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="GlyphWebCore_NewsletterTest.xml" hash="ba5b6f9a14dfeb87f8736792a27d98e8"/></dir></target><target name="magedesign"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="layout"><dir name="glyphwebcore"><file name="newslettertest.xml" hash="47de848e1847d7c3ab855bcb7cdf4088"/></dir></dir><dir name="template"><dir name="glyphwebcore"><dir name="newslettertest"><file name="sendtest.phtml" hash="67e70e0a536d49167da801a057bcf14f"/></dir></dir></dir></dir></dir></dir></target></contents>
+    <date>2013-11-05</date>
+    <time>14:40:22</time>
+    <contents><target name="magecommunity"><dir name="GlyphWebCore"><dir name="NewsletterTest"><dir name="Helper"><file name="Data.php" hash="6b3b2bcdeb4faf7bed8873c7ea1f0d70"/></dir><dir name="controllers"><dir name="Adminhtml"><file name="SendtestController.php" hash="f5c472ae2895b2cc1b28e5a09cb7ce4d"/></dir></dir><dir name="etc"><file name="config.xml" hash="c99417c39b86f481e2f5b9a821c32f7a"/></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="GlyphWebCore_NewsletterTest.xml" hash="ba5b6f9a14dfeb87f8736792a27d98e8"/></dir></target><target name="magedesign"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="layout"><dir name="glyphwebcore"><file name="newslettertest.xml" hash="47de848e1847d7c3ab855bcb7cdf4088"/></dir></dir><dir name="template"><dir name="glyphwebcore"><dir name="newslettertest"><file name="sendtest.phtml" hash="67e70e0a536d49167da801a057bcf14f"/></dir></dir></dir></dir></dir></dir></target></contents>
     <compatible/>
     <dependencies><required><php><min>5.2.0</min><max>5.5.0</max></php></required></dependencies>
 </package>
