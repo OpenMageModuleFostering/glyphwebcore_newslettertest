@@ -1,6 +1,13 @@
 <?php
 
-class GlyphWebCore_NewsletterTest_Adminhtml_SendTestController extends Mage_Adminhtml_Controller_Action
+/**
+ * @creator - Harish Kumar B P from GlyphWebCore Technologies
+ * @website - http://www.magedevelopment.com
+ * @module  - GlyphWebCore NewsletterTest
+ *
+**/
+
+class GlyphWebCore_NewsletterTest_Adminhtml_SendtestController extends Mage_Adminhtml_Controller_Action
 {	
 
 

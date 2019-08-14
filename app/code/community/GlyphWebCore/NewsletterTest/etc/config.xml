@@ -2,7 +2,7 @@
 <config>
     <modules>
         <GlyphWebCore_NewsletterTest>
-            <version>0.1.0</version>
+            <version>1.0.1</version>
         </GlyphWebCore_NewsletterTest>
     </modules> 
      
