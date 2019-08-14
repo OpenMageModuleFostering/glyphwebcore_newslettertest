@@ -48,12 +48,12 @@ foreach ($connection->fetchAll($sql) as $arr_row)
             <table cellspacing="0" class="form-list">
             	<tr>
                     <td class="label"><?=$this->__('Your Name')?> <span class="required">*</span></td>
-                    <td class="input-ele"><input type="text" class="input-text required-entry" name="name" style="width:220px;"/><br>
+                    <td class="input-ele"><input type="text" class="input-text required-entry" name="name" value="<?php echo Mage::getStoreConfig('trans_email/ident_general/name');?>" style="width:220px;"/><br>
                     </td>
                 </tr>            
             	<tr>
                     <td class="label"><?=$this->__('Your Email')?> <span class="required">*</span></td>
-                    <td class="input-ele"><input type="text" class="input-text required-entry" name="email" style="width:220px;"/><br>
+                    <td class="input-ele"><input type="text" class="input-text required-entry" name="email" value="<?php echo Mage::getStoreConfig('trans_email/ident_general/email');?>" style="width:220px;"/><br>
                     </td>
                 </tr>
                 <tr>
