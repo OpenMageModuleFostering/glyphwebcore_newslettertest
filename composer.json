@@ -1,7 +1,7 @@
 {
-    "name": "OpenMageModuleFostering\/GlyphWebCore_NewsletterTest",
+    "name": "openmage-module-fostering\/glyphwebcore_newslettertest",
     "type": "magento-module",
-    "license": "Open-Software-License-(OSL)",
+    "license": "OSL-3.0",
     "homepage": "",
     "description": "Send a Test Newsletter to an email to check how the customers will receive your Newsletter.",
     "authors": [
